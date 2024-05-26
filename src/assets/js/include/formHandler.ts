@@ -16,7 +16,16 @@ export function handleFormFocus() {
       toggleLabelClass(e.currentTarget as HTMLInputElement, 'add')
     })
     input.addEventListener('blur', (e) => {
-      toggleLabelClass(e.currentTarget as HTMLInputElement, 'remove')
+      const target = e.currentTarget as HTMLInputElement
+      if (target.value.trim() === '') {
+        toggleLabelClass(e.currentTarget as HTMLInputElement, 'remove')
+      }
     })
+  })
+}
+
+export function redirectOnSubmit() {
+  document.addEventListener('wpcf7mailsent', () => {
+    window.location.href = '/thanks/'
   })
 }
