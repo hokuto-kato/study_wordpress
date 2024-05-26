@@ -1,5 +1,7 @@
-import scrollHandler from './include/scrollHandler'
+import { handleFormFocus } from './include/formFocusHandler'
+import { initScrollHandler } from './include/scrollHandler'
 
 window.addEventListener('DOMContentLoaded', () => {
-  scrollHandler()
+  initScrollHandler()
+  handleFormFocus()
 })

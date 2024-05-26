@@ -26,6 +26,8 @@ const handleScroll = () => {
   scrollPos = currentTop
 }
 
-export default () => {
-  window.addEventListener('scroll', () => throttle(handleScroll, 100))
+const throttleHandleScroll = throttle(handleScroll, 100)
+
+export function initScrollHandler() {
+  window.addEventListener('scroll', throttleHandleScroll)
 }
