@@ -45,8 +45,22 @@
             <hr class="my-4" />
           <?php endwhile ?>
           <!-- Pager-->
-          <div class="d-flex justify-content-end mb-4">
-            <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
+          <div class="d-flex justify-content-between mb-4">
+            <?php
+            $link = get_previous_posts_link('← Newer Posts');
+            if ($link) {
+              $link = str_replace('<a', '<a class="btn btn-primary text-uppercase"', $link);
+              echo $link;
+            }
+            ?>
+            <?php
+            $link = get_next_posts_link('Older Posts →');
+            if ($link) {
+              $link = str_replace('<a', '<a class="btn btn-primary text-uppercase"', $link);
+              echo $link;
+            }
+
+            ?>
           </div>
         <?php else : ?>
           <p>Article Not Found</p>
