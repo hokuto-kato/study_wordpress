@@ -11,8 +11,5 @@
     "wp-content/themes": "./wordpress/themes",
     "wp-content/plugins": "./wordpress/plugins"
   },
-  "plugins": [
-    "https://downloads.wordpress.org/plugin/all-in-one-wp-migration.zip",
-    "https://downloads.wordpress.org/plugin/query-monitor.3.16.2.zip"
-  ]
+  "phpVersion": "8.3"
 }
