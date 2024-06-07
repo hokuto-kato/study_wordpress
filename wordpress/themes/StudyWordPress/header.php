@@ -16,16 +16,16 @@
 	global $js_ext;
 ?>
 <?php
-// if ( WP_DEBUG ) {
-// $root    = 'http://localhost:5173';
-// $css_ext = 'scss';
-// $js_ext  = 'ts';
-// echo '<script type="module" src="http://localhost:5173/@vite/client"></script>';
-// } else {
+if ( WP_DEBUG ) {
+	$root    = 'http://localhost:5173';
+	$css_ext = 'scss';
+	$js_ext  = 'ts';
+	echo '<script type="module" src="http://localhost:5173/@vite/client"></script>';
+} else {
 	$root    = get_template_directory_uri();
 	$css_ext = 'css';
 	$js_ext  = 'js';
-// }
+}
 ?>
 <link rel="stylesheet" href="<?php echo $root; ?>/assets/style/style.<?php echo $css_ext; ?>">
 <!--必須テンプレートタグ-->
