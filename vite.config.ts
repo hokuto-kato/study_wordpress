@@ -38,10 +38,13 @@ export default defineConfig(({ mode }) => ({
     port: 5173,
     origin: mode == 'wp' ? undefined : 'http://localhost:5173'
   },
+  css: {
+    devSourcemap: true
+  },
   build: {
     outDir:
       mode === 'wp'
-        ? resolve(__dirname, 'wordpress/themes/MyBlog/')
+        ? resolve(__dirname, 'wordpress/themes/StudyWordPress/')
         : resolve(__dirname, 'dist'),
     rollupOptions: {
       input: mode === 'wp' ? inputsForWordPress : inputsForStatic,
