@@ -1,8 +1,6 @@
-import throttle from './throttle'
-
 let scrollPos = 0
 const mainNav = document.getElementById('mainNav')
-const headerHeight = mainNav?.clientHeight || 0 // Set default values
+const headerHeight = mainNav?.clientHeight || 0
 
 const isFixed = () => mainNav?.classList.contains('is-fixed')
 
@@ -26,8 +24,16 @@ const handleScroll = () => {
   scrollPos = currentTop
 }
 
-const throttleHandleScroll = throttle(handleScroll, 100)
+function handleMediaQueryChange(e: MediaQueryList | MediaQueryListEvent) {
+  if (e.matches) {
+    window.addEventListener('scroll', handleScroll)
+  } else {
+    window.removeEventListener('scroll', handleScroll)
+  }
+}
 
 export function initScrollHandler() {
-  window.addEventListener('scroll', throttleHandleScroll)
+  const mediaQuery = window.matchMedia('(min-width: 992px)')
+  mediaQuery.addEventListener('change', handleMediaQueryChange)
+  handleMediaQueryChange(mediaQuery)
 }
