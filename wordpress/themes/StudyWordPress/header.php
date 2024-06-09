@@ -2,8 +2,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>Clean Blog - Start Bootstrap Theme</title>
-<link rel="icon" type="image/x-icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon.ico" />
+<title>Study WordPress</title>
+<link rel="icon" sizes="any" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.svg"  />
 <!-- Font Awesome icons (free version)-->
 <script src="//use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 <!-- Google fonts-->
