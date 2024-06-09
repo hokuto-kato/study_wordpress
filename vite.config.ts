@@ -54,9 +54,11 @@ export default defineConfig(({ mode }) => ({
         assetFileNames: (assetsInfo) => {
           if (assetsInfo.name === 'style.css') {
             return 'assets/style/[name].[ext]'
-          } else {
-            return 'assets/[name].[ext]'
           }
+          if (/\.(gif|jpe?g|png|svg|webp|ico)$/.test(assetsInfo.name ?? '')) {
+            return 'assets/images/[name].[ext]'
+          }
+          return 'assets/[name].[ext]'
         }
       }
     }
